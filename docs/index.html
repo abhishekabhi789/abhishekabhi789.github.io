@@ -59,6 +59,11 @@
             touch-action: manipulation;
         }
 
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
         .app-icon {
             width: 200px;
             height: auto;
@@ -265,9 +270,11 @@
     <section id="android-apps">
         <h2>📱 Android Apps</h2>
         <div class="app-container">
-            <div class="card" onclick="window.location.href='/LyricsForPoweramp';">
-                <img class="app-icon" src="/assets/icon_l4pa.png" alt="Lyrics for Poweramp app icon">
-                <h3>Lyrics for Poweramp</h3>
+            <div class="card">
+                <a class="card-link" href="/LyricsForPoweramp">
+                    <img class="app-icon" src="/assets/icon_l4pa.png" alt="Lyrics for Poweramp app icon">
+                    <h3>Lyrics for Poweramp</h3>
+                </a>
                 <p>A plugin for Poweramp to fetch lyrics from the internet.</p>
                 <a href="https://play.google.com/store/apps/details?id=io.github.abhishekabhi789.lyricsforpoweramp&referrer=utm_source%3Dgithub%26utm_medium%3Dprofile_page%26utm_campaign%3Dandroid_apps"
                     target="_blank" class="btn" onclick="event.stopPropagation();">
@@ -275,10 +282,12 @@
                         width="200">
                 </a>
             </div>
-            <div class="card" onclick="window.location.href='/QRScanner';">
+            <div class="card">
                 <div class="ribbon"><span>Closed Beta</span></div>
-                <img class="app-icon" src="/assets/icon_qrscanner.png" alt="QRScanner app icon">
-                <h3>QRScanner</h3>
+                <a class="card-link" href="/QRScanner">
+                    <img class="app-icon" src="/assets/icon_qrscanner.png" alt="QRScanner app icon">
+                    <h3>QRScanner</h3>
+                </a>
                 <p>A simple QR code and barcode scanner for android.</p>
                 <button class="custom-btn"
                     onclick="event.stopPropagation(); window.open('/QRScanner/#closed-test', '_blank');">
@@ -290,13 +299,13 @@
     <section id="browser-extensions">
         <h2>🌐 Browser Extensions</h2>
         <div class="app-container">
-            <div class="card"
-                onclick="window.open('https://github.com/abhishekabhi789/LyricsForSpotifyWeb', '_blank');">
-
-                <img class="app-icon" src="/assets/icon_l4sw.png" alt="Lyrics for Spotify Web extension icon">
-                <h3>Lyrics for Spotify Web</h3>
+            <div class="card">
+                <a class="card-link" href="https://github.com/abhishekabhi789/LyricsForSpotifyWeb" target="_blank">
+                    <img class="app-icon" src="/assets/icon_l4sw.png" alt="Lyrics for Spotify Web extension icon">
+                    <h3>Lyrics for Spotify Web</h3>
+                </a>
                 <p>A chrome extension to fetch lyrics for songs on Spotiy Web.</p>
-                <a class="custom-btn" onclick="event.stopPropagation();"
+                <a class="custom-btn"
                     href="https://github.com/abhishekabhi789/LyricsForSpotifyWeb/archive/refs/heads/main.zip" download>
                     &#128230 Download
                 </a>
