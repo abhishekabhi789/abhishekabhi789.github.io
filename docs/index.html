@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>abhishekabhi789</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            user-select: none;
+        }
+
+        header {
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 700;
+        }
+
+        .app-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .card {
+            position: relative;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .app-icon {
+            width: 200px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn {
+            padding: 10px 20px;
+            transition: 0.3s;
+            z-index: 10;
+        }
+
+        .custom-btn {
+            text-decoration: none;
+            font-weight: 700;
+            padding: 10px 20px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        /* Code adated from [https://www.cssportal.com/blog/create-corner-ribbon/] */
+        .ribbon {
+            position: absolute;
+            right: -5px;
+            top: -5px;
+            z-index: 1;
+            overflow: hidden;
+            width: 75px;
+            height: 75px;
+            text-align: right;
+        }
+
+        .ribbon span {
+            font-size: 10px;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: bold;
+            line-height: 20px;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            /* Needed for Safari */
+            width: 100px;
+            display: block;
+            background: #D32F2F;
+            background: linear-gradient(#F44336 0%, #D32F2F 100%);
+            box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+            position: absolute;
+            top: 19px;
+            right: -21px;
+        }
+
+        .ribbon span::before {
+            content: '';
+            position: absolute;
+            left: 0px;
+            top: 100%;
+            z-index: -1;
+            border-left: 3px solid #D32F2F;
+            border-right: 3px solid transparent;
+            border-bottom: 3px solid transparent;
+            border-top: 3px solid #D32F2F;
+        }
+
+        .ribbon span::after {
+            content: '';
+            position: absolute;
+            right: 0%;
+            top: 100%;
+            z-index: -1;
+            border-right: 3px solid #D32F2F;
+            border-left: 3px solid transparent;
+            border-bottom: 3px solid transparent;
+            border-top: 3px solid #D32F2F;
+        }
+
+
+        .card:hover,
+        .btn:hover,
+        .custom-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .card:hover,
+        .card:focus,
+        .card:active {
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card .btn,
+        .card .custom-btn {
+            display: none;
+        }
+
+        .card:focus .btn,
+        .card:focus .custom-btn,
+        .card:hover .btn,
+        .card:hover .custom-btn {
+            display: inline-block;
+
+        }
+
+        header {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        section {
+            padding: 60px 20px;
+        }
+
+        footer {
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        h1,
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        @media (prefers-color-scheme: light) {
+            body {
+                background-color: #ffffff;
+                color: #000000;
+            }
+
+            header {
+                background: #f1f1f1;
+            }
+
+            nav a {
+                color: #000000;
+            }
+
+            .custom-btn {
+                background-color: #f1f1f1;
+                color: #000000;
+            }
+
+            footer {
+                background: #f1f1f1;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #121212;
+                color: white;
+            }
+
+            header {
+                background: #1e1e1e;
+            }
+
+            nav a {
+                color: white;
+            }
+
+            .custom-btn {
+                background-color: #1e1e1e;
+                color: white;
+            }
+
+            footer {
+                background: #1e1e1e;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            nav {
+                flex-direction: column;
+            }
+
+            .app-icon {
+                width: 150px;
+            }
+
+            .btn {
+                padding: 5px 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div>
+                <h1>abhishekabhi789</h1>
+            </div>
+            <div>
+                <a href="#android-apps">Android Apps</a>
+                <a href="#browser-extensions">Browser Extensions</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+    <section id="android-apps">
+        <h2>📱 Android Apps</h2>
+        <div class="app-container">
+            <div class="card" onclick="window.location.href='/LyricsForPoweramp';">
+                <img class="app-icon" src="/assets/icon_l4pa.png" alt="Lyrics for Poweramp app icon">
+                <h3>Lyrics for Poweramp</h3>
+                <p>A plugin for Poweramp to fetch lyrics from the internet.</p>
+                <a href="https://play.google.com/store/apps/details?id=io.github.abhishekabhi789.lyricsforpoweramp&referrer=utm_source%3Dgithub%26utm_medium%3Dprofile_page%26utm_campaign%3Dandroid_apps"
+                    target="_blank" class="btn" onclick="event.stopPropagation();">
+                    <img src="/assets/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play"
+                        width="200">
+                </a>
+            </div>
+            <div class="card" onclick="window.location.href='/QRScanner';">
+                <div class="ribbon"><span>Closed Beta</span></div>
+                <img class="app-icon" src="/assets/icon_qrscanner.png" alt="QRScanner app icon">
+                <h3>QRScanner</h3>
+                <p>A simple QR code and barcode scanner for android.</p>
+                <button class="custom-btn"
+                    onclick="event.stopPropagation(); window.open('/QRScanner/#closed-test', '_blank');">
+                    &#128279; Join Closed Test
+                </button>
+            </div>
+        </div>
+    </section>
+    <section id="browser-extensions">
+        <h2>🌐 Browser Extensions</h2>
+        <div class="app-container">
+            <div class="card"
+                onclick="window.open('https://github.com/abhishekabhi789/LyricsForSpotifyWeb', '_blank');">
+
+                <img class="app-icon" src="/assets/icon_l4sw.png" alt="Lyrics for Spotify Web extension icon">
+                <h3>Lyrics for Spotify Web</h3>
+                <p>A chrome extension to fetch lyrics for songs on Spotiy Web.</p>
+                <a class="custom-btn" onclick="event.stopPropagation();"
+                    href="https://github.com/abhishekabhi789/LyricsForSpotifyWeb/archive/refs/heads/main.zip" download>
+                    &#128230 Download
+                </a>
+
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>📧 Contact</h2>
+        <p>For any queries or feedback, feel free to contact me at <a href="mailto:justsomerandomapps@gmail.com"
+                target="_blank" rel="noopener noreferrer">E-Mail</a>
+    </section>
+    <footer>
+        <button class="custom-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+            ⬆ Back to Top
+        </button>
+    </footer>
+    <script>
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > lastScrollY) {
+                // Scrolling down → Hide header
+                header.style.transform = "translateY(-100%)";
+            } else {
+                // Scrolling up → Show header
+                header.style.transform = "translateY(0)";
+            }
+            lastScrollY = window.scrollY;
+        });
+    </script>
+</body>
+
+</html>
